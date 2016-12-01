@@ -65,6 +65,8 @@
             calc.resultFlag = false;
         };
 
+        $scope.checkBoxValue = false;
+
         function getResult() {
             try {
                 var result = eval(+calc.lastValue + calc.lastOperation + +calc.inputValue);
