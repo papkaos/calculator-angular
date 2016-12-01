@@ -1,0 +1,15 @@
+.calc-wrapper {
+    float: none;
+    margin-top: 30px;
+}
+
+button {
+    /*line-height: 1.7 !important;*/
+    /*font-size: 20px !important;*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+.info-screen {
+    height: 1.5em;
+}
