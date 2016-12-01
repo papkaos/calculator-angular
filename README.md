@@ -1,2 +1,2 @@
-# calculator-angular
-AngularJS calculator project
+# Calculator AngularJS
+AngularJS calculator app.
