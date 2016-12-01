@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="calculator">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--replace by cdn-->
+    <link rel="stylesheet" href="libs/bootstrap.min.css">
+    <style>
+        .calc-wrapper {
+            float: none;
+            margin-top: 30px;
+        }
+
+        button {
+            /*line-height: 1.7 !important;*/
+            /*font-size: 20px !important;*/
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-color: #fff;
+        }
+        .info-screen {
+            height: 1.5em;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-4 calc-wrapper center-block" ng-controller="CalculatorController as calcCtrl">
+            <div id="#screen" class="clearfix">
+                <div class="info-screen text-right"><span>{{calculator.lastValue}} {{calculator.lastOperation}}</span></div>
+                <input type="text" class="col-xs-12 text-right form-control input-lg" ng-value="calculator.inputValue" disabled>
+            </div>
+            <div id="operators" class="clearfix">
+                <button class="btn btn-primary btn-lg col-sm-3" ng-click="addOperation('+')">+</button>
+                <button class="btn btn-primary btn-lg col-sm-3" ng-click="addOperation('-')">-</button>
+                <button class="btn btn-primary btn-lg col-sm-3" ng-click="addOperation('*')">*</button>
+                <button class="btn btn-primary btn-lg col-sm-3" ng-click="addOperation('/')">/</button>
+            </div>
+            <div id="buttons" class="clearfix">
+                <button class="btn btn-lg col-sm-3" ng-click="clearAll()">C</button>
+                <button class="btn btn-lg col-sm-3" ng-click="addDigit('7')">7</button>
+                <button class="btn btn-lg col-sm-3" ng-click="addDigit('8')">8</button>
+                <button class="btn btn-lg col-sm-3" ng-click="addDigit('9')">9</button>
+
+                <button class="btn btn-lg col-sm-3" ng-click="addDot()">.</button>
+                <button class="btn btn-lg col-sm-3" ng-click="addDigit('4')">4</button>
+                <button class="btn btn-lg col-sm-3" ng-click="addDigit('5')">5</button>
+                <button class="btn btn-lg col-sm-3" ng-click="addDigit('6')">6</button>
+
+                <button class="btn btn-lg col-sm-3" ng-click="addDigit('0')">0</button>
+                <button class="btn btn-lg col-sm-3" ng-click="addDigit('1')">1</button>
+                <button class="btn btn-lg col-sm-3" ng-click="addDigit('2')">2</button>
+                <button class="btn btn-lg col-sm-3" ng-click="addDigit('3')">3</button>
+
+                <button class="btn btn-success btn-lg col-sm-12" ng-click="calculate()">=</button>
+
+                <div class="developers-mode">
+                    <div ng-repeat="(key, value) in calculator">{{ key }}: {{ value }}</div>
+                </div>
+            </div>
+            <div id="result">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="libs/angular.min.js"></script>
+<script src="calculator.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>-->
+</body>
+</html>
